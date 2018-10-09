@@ -1,0 +1,27 @@
+---
+# tasks file for postgresql-client
+
+- block:
+    - name: add postgresql repository key
+      apt_key:
+         url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+         state: present
+
+    - name: add postgresql repository
+      apt_repository:
+         repo: "{{ postrgesql_client_repo }}"
+         state: present
+
+    - name: install postgresql-client-{{ postgresql_client_version }}
+      apt:
+         name: "{{ item }}"
+         cache_valid_time: "{{ apt_cache_valid_time|default(omit) }}"
+         state: latest
+         install_recommends: no
+         update_cache: yes
+      with_items:
+         - "postgresql-client-{{ postgresql_client_version }}"
+         
+  become: true
+  become_method: sudo
+  tags: postgresql-client

@@ -1,0 +1,12 @@
+galaxy_info:
+  description: role for install postgresql-client
+  company: Traveloka
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+
+  galaxy_tags: []
+
+dependencies: []
