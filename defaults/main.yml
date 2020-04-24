@@ -1,5 +1,5 @@
 ---
 #defaults file for shared/postgresql-client
 
-postgresql_client_version: 9.6
+postgresql_client_version: 12
 postrgesql_client_repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main"
