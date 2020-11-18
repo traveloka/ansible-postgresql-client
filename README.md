@@ -10,7 +10,7 @@ Requires Ansible 2.0 or higher
 ### Defaults ###
   - name: postgresql_client_version
     desc: version of postgresql-client
-    value: 9.5
+    value: 12
 
 ## Dependencies ##
 
